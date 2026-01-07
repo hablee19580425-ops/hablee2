@@ -113,6 +113,9 @@ const GAME_TITLES = [
   },
 ];
 
+// Helper to generate IDs safely in any context (including non-HTTPS)
+const generateId = () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
 const App: React.FC = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -139,7 +142,7 @@ const App: React.FC = () => {
     const reader = new FileReader();
     reader.onloadend = () => {
       const newGame: Game = {
-        id: crypto.randomUUID(),
+        id: generateId(),
         titleKorean: data.titleKorean,
         titleEnglish: data.titleEnglish,
         linkUrl: data.linkUrl,
