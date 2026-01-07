@@ -1,0 +1,5 @@
+{
+  "name": "Nexus Game Launcher",
+  "description": "A high-fidelity visual game library manager. Upload local game images, organize your collection, and launch games instantly. Features AI-powered metadata generation.",
+  "requestFramePermissions": []
+}
